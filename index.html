@@ -165,10 +165,10 @@
         </div>
         <div class="container">
             <div class="slide">
-                <img src="https://cmsv2.yame.vn/uploads/f2e97baf-a87e-4ed5-afd0-8bce693bf893/Banner_cf_-_FIX.jpg?quality=80&w=0&h=0" alt="">
+                <img src="https://cmsv2.yame.vn/uploads/9d3a5313-5569-40d6-ba94-e025ca6b26c6/Banner_sale_HLW.jpg?quality=80&w=0&h=0" alt="">
             </div>
-            <div class="slide slide--zoomIn">
-                <img src="https://cmsv2.yame.vn/uploads/f2e97baf-a87e-4ed5-afd0-8bce693bf893/Banner_cf_-_FIX.jpg?quality=80&w=0&h=0" alt="">
+            <div class="slide">
+                <img src="https://cmsv2.yame.vn/uploads/9d3a5313-5569-40d6-ba94-e025ca6b26c6/Banner_sale_HLW.jpg?quality=80&w=0&h=0" class="reveal"alt="">
             </div>
         </div>
     </div>
@@ -182,5 +182,22 @@
             </div>
        </div>
     </div>
+    <script>
+        window.addEventListener('scroll',reveal);
+        function reveal(){
+            var  reveals = document.querySelectorAll('.reveal');
+            for(var i =0;i<reveals.length;i++){
+                var wHeight = window.innerHeight;
+                var revealTop = reveals[i].getBoundingClientRect().top;
+                var revealPoint = 150;
+
+                if(revealTop < wHeight - revealPoint){
+                    reveals[i].classList.add('active');
+                }else{
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+    </script>
 </body>
 </html>

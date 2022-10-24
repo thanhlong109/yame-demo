@@ -198,13 +198,25 @@ html{
 .container{
     padding: 0 60px;
 }
-.slide img{ 
+.slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slide>img{
     width: 100%;
 }
-.slide--zoomIn{
-    animation: zoomIn ease .3s;
+img.reveal{
+    width: 25%;
+    transform: translateY(50%);
+    opacity: 0;
+    transition: all 0.7s ease-out;
 }
-
+.reveal.active{
+    width: 100%;
+    transform: translateY(0);
+    opacity: 1;
+}
 @keyframes sildeIn{
     from{
         transform: translateY(30px);
@@ -213,15 +225,5 @@ html{
     to{
         transform: translateY(0);
         opacity: 1;
-    }
-}
-@keyframes zoomIn{
-    from{
-        width: 70%;
-        opacity: 0;
-    }
-    to{
-       width: 100%;
-       opacity: 1;
     }
 }
